@@ -1,0 +1,124 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: Lightblue;
+    font-family: Futura, Helvetica, sans-serif;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+main table {
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+}
+
+table {
+    display: table;
+    border-spacing: 2px;
+    border-color: grey;
+}
+tfoot {
+    font-weight: bold;
+}
+
+.password_reqs {
+    border: 3px solid black;
+    padding: 10px;
+    margin: 20px;
+    line-height: 75%;
+    background-color: aliceblue;
+}
+
+.left_text {
+    text-align: left;
+}
+
+/* Responsive column cards code from https://www.w3schools.com/howto/howto_css_column_cards.asp */
+/* Float two columns side by side*/
+.column2 {
+  float: right;
+  width: 50%;
+  padding: 0 10px;
+}
+
+/* Float three columns side by side */
+.column3 {
+  float: left;
+  width: 33.33%;
+  padding: 0 10px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  /*background-color: #f1f1f1;*/
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+#card1 {
+    background-color: lightpink;
+}
+
+#card2 {
+    background-color: lightblue;
+}
+
+#card3 {
+    background-color: lightgreen;
+}

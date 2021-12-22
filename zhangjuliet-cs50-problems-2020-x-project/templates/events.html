@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Events
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Organization</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Hours</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        {% for event in events %}
+            <tbody>
+                <tr>
+                    <td>{{ event.event }}</td>
+                    <td>{{ event.date }}</td>
+                    <td>{{ event.location }}</td>
+                    <td>{{ event.organization }}</td>
+                    <td>{{ event.category }}</td>
+                    <td>{{ event.description }}</td>
+                    <td>{{ event.hours }}</td>
+                    <td>
+                        <form action="/delete_event" method="post">
+                            <input type="hidden" name="event_id" value="{{ event.event_id }}">
+                            <button class="btn btn-sm btn-danger" type="submit" value="delete">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        {% endfor %}
+        <tfoot>
+            <tr>
+                <td colspan="3">TOTAL HOURS VOLUNTEERED</td>
+                <td colspan="3"></td>
+                <td>{{ total_hours }}</td>
+                <td colspan="1"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <form action="/add_event" method="get">
+        <button class="btn btn-primary" type="submit">Add Event</button>
+    </form>
+{% endblock %}

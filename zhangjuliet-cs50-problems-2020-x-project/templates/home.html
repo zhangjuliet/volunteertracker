@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <form action="/home" method="post">
+        <div>
+            <h1>Welcome, {{ name }}!</h1>
+        </div><br>
+        <div class="row">
+            <div class="column3"><div class="card" id="card1">
+                <h1>{{ total_events }}</h1>
+                {% if total_events == 1 %}
+                    <h4>event attended</h4>
+                {% else %}
+                    <h4>events attended</h4>
+                {% endif %}
+            </div></div>
+            <div class="column3"><div class="card" id="card2">
+                <h1>{{ total_hours }}</h1>
+                {% if total_hours > 0 and total_hours <= 1 %}
+                    <h4>hour volunteered</h4>
+                {% else %}
+                    <h4>hours volunteered</h4>
+                {% endif %}
+            </div></div>
+            <div class="column3"><div class="card" id="card3">
+                <h1>{{ total_organizations }}</h1>
+                {% if total_organizations == 1 %}
+                    <h4>organization joined</h4>
+                {% else %}
+                    <h4>organizations joined</h4>
+                {% endif %}
+            </div></div>
+        </div>
+    </form>
+{% endblock %}

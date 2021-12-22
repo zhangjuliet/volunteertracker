@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Organizations
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Organization</th>
+                <th>Scope</th>
+                <th>Date Joined</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        {% for organization in organizations %}
+            <tbody>
+                <tr>
+                    <td>{{ organization.organization_name }}</td>
+                    <td>{{ organization.scope }}</td>
+                    <td>{{ organization.date_joined }}</td>
+                    <td>
+                        <form action="/delete_organization" method="post">
+                            <input type="hidden" name="organization_id" value="{{ organization.organization_id }}">
+                            <button class="btn btn-sm btn-danger" type="submit" value="delete">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+    <form action="/add_organization" method="get">
+        <button class="btn btn-primary" type="submit">Add Organization</button>
+    </form>
+{% endblock %}

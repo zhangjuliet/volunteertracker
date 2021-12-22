@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Organization
+{% endblock %}
+
+{% block main %}
+    <h1><i>add an organization</i></h1><br>
+    <form action="/add_organization" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="organization_name" placeholder="Organization Name" type="text" required>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="scope" required><option disabled selected value="">Scope</option>
+                <option value="School">Schoolwide</option>
+                <option value="City">Citywide</option>
+                <option value="State">Statewide</option>
+                <option value="National">National</option>
+                <option value="International">International</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="date_joined" placeholder="Date Joined" type="date" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Organization</button>
+    </form>
+{% endblock %}
